@@ -14,7 +14,7 @@ package com.simon.homework;
  * <p>
  * ?    1:数据在1-100之间，用for循环实现数据的获取。 ?    2:根据规则，用if语句实现数据的判断：要么个位是7，要么十位是7，要么能够被7整除。 ?    3:在控制台输出满足规则的数据。
  */
-public class Test102 {
+public class Test15_2 {
     public static void main(String[] args) {
         for (int i = 1; i <= 100; i++) {
             if (i % 7 == 0 || i % 10 == 7 || i / 10 % 10 == 7) {

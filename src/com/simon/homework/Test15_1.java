@@ -18,7 +18,7 @@ import java.util.Scanner;
  *
  * ?    1:键盘录入一个1-7的星期数，用一个变量week接收。 ?    2:对week进行判断，用if和switch两种方式分别完成。 ?    3:在对应的语句控制中输出对应的减肥活动。
  */
-public class Test101 {
+public class Test15_1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入今天是星期几 ");
