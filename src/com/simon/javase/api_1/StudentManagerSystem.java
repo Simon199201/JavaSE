@@ -48,7 +48,7 @@ public class StudentManagerSystem {
                 System.out.println("请输入学生的姓名：");
                 String name = scanner.nextLine();
                 System.out.println("请输入学生的年龄：");
-                String age = scanner.nextLine();
+                int age = scanner.nextInt();
                 System.out.println("请输入学生的住址：");
                 String address = scanner.nextLine();
                 Student student = new Student();
@@ -125,7 +125,7 @@ public class StudentManagerSystem {
                 System.out.println("请输入学生的姓名：");
                 String name = scanner.nextLine();
                 System.out.println("请输入学生的年龄：");
-                String age = scanner.nextLine();
+                int age = scanner.nextInt();
                 System.out.println("请输入学生的住址：");
                 String address = scanner.nextLine();
                 student.setSid(sid);

@@ -1,12 +1,14 @@
 package com.simon.javase.api_1;
 
-public class Student {
+import java.util.Objects;
+
+public class Student implements Comparable<Student> {
     private String name;
-    private String age;
+    private int age;
     private String sid;
     private String address;
 
-    public Student(String name, String age, String sid, String address) {
+    public Student(String name, int age, String sid, String address) {
         this.name = name;
         this.age = age;
         this.sid = sid;
@@ -24,11 +26,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -56,5 +58,29 @@ public class Student {
                 ", sid='" + sid + '\'' +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(name, student.name) &&
+                Objects.equals(age, student.age) &&
+                Objects.equals(sid, student.sid) &&
+                Objects.equals(address, student.address);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name, age, sid, address);
+    }
+
+
+    @Override
+    public int compareTo(Student s) {
+        int num = this.age - s.age;
+        return num == 0 ? this.name.compareTo(s.name) : num;
     }
 }
