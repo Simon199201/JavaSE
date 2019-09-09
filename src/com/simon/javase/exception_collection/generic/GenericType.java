@@ -1,9 +1,7 @@
-package com.simon.javase.generic;
+package com.simon.javase.exception_collection.generic;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * 类型通配符

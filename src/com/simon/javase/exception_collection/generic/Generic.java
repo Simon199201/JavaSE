@@ -1,4 +1,4 @@
-package com.simon.javase.generic;
+package com.simon.javase.exception_collection.generic;
 
 /**
  * 泛型类
