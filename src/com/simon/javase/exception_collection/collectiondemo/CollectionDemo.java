@@ -1,4 +1,4 @@
-package com.simon.javase.collectiondemo;
+package com.simon.javase.exception_collection.collectiondemo;
 
 import com.simon.javase.api_1.Student;
 
