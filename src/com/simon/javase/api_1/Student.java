@@ -7,6 +7,33 @@ public class Student implements Comparable<Student> {
     private int age;
     private String sid;
     private String address;
+    private int shuxue;
+    private int yuwen;
+    private int english;
+
+    public int getShuxue() {
+        return shuxue;
+    }
+
+    public void setShuxue(int shuxue) {
+        this.shuxue = shuxue;
+    }
+
+    public int getYuwen() {
+        return yuwen;
+    }
+
+    public void setYuwen(int yuwen) {
+        this.yuwen = yuwen;
+    }
+
+    public int getEnglish() {
+        return english;
+    }
+
+    public void setEnglish(int english) {
+        this.english = english;
+    }
 
     public Student(String name, int age, String sid, String address) {
         this.name = name;
