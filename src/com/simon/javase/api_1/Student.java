@@ -1,8 +1,11 @@
 package com.simon.javase.api_1;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Student implements Comparable<Student> {
+public class Student implements Comparable<Student> , Serializable {
+    //序列化
+    private static long SerialVersionUID = 45L;
     private String name;
     private int age;
     private String sid;
