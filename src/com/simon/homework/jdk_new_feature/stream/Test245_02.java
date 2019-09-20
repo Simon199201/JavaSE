@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 
@@ -24,24 +25,43 @@ public class Test245_02 {
         arrayList.add(7);
         int sum = arrayList.stream().mapToInt(value -> value).sum();
         System.out.println("average is " + sum / arrayList.size());
+        //求Integer类型ArrayList中所有元素的平均数
+        Function<ArrayList<Integer>, Integer> function1 = new Function<ArrayList<Integer>, Integer>() {
+            @Override
+            public Integer apply(ArrayList<Integer> integers) {
+                int sum = 0;
+                for (Integer i : integers) {
+                    sum += i;
+                }
+                return sum / integers.size();
+            }
+        };
+//        将Map<String,Integer>中value存到ArrayList<Integer>中
+        Function<Map<String, Integer>, ArrayList<Integer>> function = new Function<Map<String, Integer>, ArrayList<Integer>>() {
+            @Override
+            public ArrayList<Integer> apply(Map<String, Integer> stringIntegerMap) {
+                ArrayList<Integer> arrayList1 = new ArrayList<>();
+                for (String key : stringIntegerMap.keySet()) {
+                    arrayList1.add(stringIntegerMap.get(key));
+                }
+                return arrayList1;
+            }
+        };
 
+        //已知学生成绩如下 姓名    成绩 岑小村    59 谷天洛    82 渣渣辉    98 蓝小月    65 皮几万    70
+        // * 3.    以学生姓名为key成绩为value创建集合并存储数据，使用刚刚创建的Function对象求学生的平均成绩
 
         Map<String, Integer> map = new HashMap<>();
-        map.put("simon", 30);
-        map.put("simon1", 30);
-        List<Integer> collect = map.values().stream().collect(Collectors.toList());
-        System.out.println(collect);
+        map.put("岑小村", 59);
+        map.put("谷天洛", 82);
+        map.put("渣渣辉", 98);
+        map.put("蓝小月", 65);
+        map.put("皮几万", 70);
 
-        int size = map.size();
-        int sum1 = map.values().stream().mapToInt(new ToIntFunction<Integer>() {
-            @Override
-            public int applyAsInt(Integer value) {
-                return value;
-            }
-        }).sum();
+        int average = function.andThen(function1).apply(map);
+        System.out.println("average is " + average);
+        
 
-        int average = sum1 / size;
-        System.out.println("平均值是" + average);
     }
 
 }

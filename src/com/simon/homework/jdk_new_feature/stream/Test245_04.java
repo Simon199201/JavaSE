@@ -21,6 +21,11 @@ public class Test245_04 {
                 return s.startsWith("郭");
             }
         }).collect(Collectors.toList());
+        String[] guos = Stream.of(arr).filter(s -> s.startsWith("郭")).toArray(String[]::new);
+
+
+
+
         String[] strings = toArray(stringList, new Function<List<String>, String[]>() {
             @Override
             public String[] apply(List<String> strings) {
